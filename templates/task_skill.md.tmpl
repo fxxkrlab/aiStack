@@ -1,0 +1,33 @@
+# L2 Task Skill
+
+## Task
+
+- ID: {{task_id}}
+- Title: {{title}}
+- Goal: {{goal}}
+
+## Required Inputs
+
+- `TaskSpec.md`
+- `Checks.md`
+- Repository files in scope only
+
+## Execution Rules
+
+1. Read TaskSpec and enforce scope.
+2. Make smallest viable change set.
+3. Keep commits/diff focused on acceptance criteria.
+4. Run verification commands and record outputs.
+5. If blocked, stop and report precise blocker.
+
+## Boundaries
+
+- In-scope files: {{files}}
+- Protected files: {{do_not_touch}}
+
+## Done Definition
+
+- Acceptance criteria all pass.
+- Verification commands executed.
+- Result can be reviewed from diff + checks only.
+

@@ -1,0 +1,47 @@
+{
+  "default_skills": [
+    "skills/L1.general-coding.SKILL.md"
+  ],
+  "keyword_routes": [
+    {
+      "keywords": ["api", "backend", "service", "database", "migration", "schema"],
+      "skills": ["skills/L1.backend-api.SKILL.md"]
+    },
+    {
+      "keywords": ["ui", "frontend", "react", "page", "component", "css", "mobile"],
+      "skills": ["skills/L1.frontend-ui.SKILL.md"]
+    },
+    {
+      "keywords": ["doc", "readme", "release", "changelog", "runbook"],
+      "skills": ["skills/L1.docs-and-release.SKILL.md"]
+    }
+  ],
+  "mcp_profiles": {
+    "base": [
+      "filesystem.read",
+      "filesystem.write",
+      "ripgrep.search",
+      "shell.test",
+      "git.diff"
+    ],
+    "web_research": [
+      "brave.web_search",
+      "fetch.imageFetch"
+    ],
+    "ui_validation": [
+      "playwright.browser_snapshot",
+      "playwright.browser_take_screenshot"
+    ]
+  },
+  "profile_rules": [
+    {
+      "keywords": ["latest", "version", "doc", "官方", "文档", "最新"],
+      "profiles": ["web_research"]
+    },
+    {
+      "keywords": ["ui", "frontend", "page", "component", "mobile"],
+      "profiles": ["ui_validation"]
+    }
+  ]
+}
+

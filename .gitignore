@@ -1,0 +1,11 @@
+vscode-extension/node_modules/
+vscode-extension/out/
+node_modules/
+dist/
+rounds/
+state/
+ROADMAP.md
+*.bin
+vscode-extension/*.vsix
+__pycache__/
+*.pyc

@@ -1,0 +1,132 @@
+{
+  "name": "aistack",
+  "displayName": "AIStack",
+  "description": "AIStack control panel for multi-model orchestration and execution.",
+  "version": "0.1.0",
+  "publisher": "local",
+  "license": "GPL-3.0-or-later",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fxxkrlab/aiStack.git"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./out/extension.js",
+  "activationEvents": [
+    "onCommand:aiStack.openControlPanel",
+    "onCommand:aiStack.initRoadmap",
+    "onCommand:aiStack.newTask",
+    "onCommand:aiStack.runWorker"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "aiStack.openControlPanel",
+        "title": "AIStack: Open Control Panel"
+      },
+      {
+        "command": "aiStack.initRoadmap",
+        "title": "AIStack: Init Roadmap"
+      },
+      {
+        "command": "aiStack.newTask",
+        "title": "AIStack: Create Task Package"
+      },
+      {
+        "command": "aiStack.runWorker",
+        "title": "AIStack: Run Worker"
+      }
+    ],
+    "configuration": {
+      "title": "AIStack",
+      "properties": {
+        "aiStack.nodePath": {
+          "type": "string",
+          "default": "node",
+          "description": "Node executable used to run dist/scripts/brain.js."
+        },
+        "aiStack.brain.provider": {
+          "type": "string",
+          "enum": [
+            "openai",
+            "anthropic",
+            "gemini",
+            "custom"
+          ],
+          "default": "openai",
+          "description": "Brain provider type."
+        },
+        "aiStack.brain.apiUrl": {
+          "type": "string",
+          "default": "",
+          "description": "Brain API base URL or endpoint."
+        },
+        "aiStack.brain.model": {
+          "type": "string",
+          "default": "",
+          "description": "Brain model name."
+        },
+        "aiStack.worker.provider": {
+          "type": "string",
+          "enum": [
+            "openai",
+            "anthropic",
+            "gemini",
+            "custom"
+          ],
+          "default": "anthropic",
+          "description": "Worker provider type."
+        },
+        "aiStack.worker.apiUrl": {
+          "type": "string",
+          "default": "",
+          "description": "Worker API base URL or endpoint."
+        },
+        "aiStack.worker.model": {
+          "type": "string",
+          "default": "",
+          "description": "Worker model name."
+        },
+        "aiStack.worker.timeoutSec": {
+          "type": "number",
+          "default": 180,
+          "description": "Worker timeout in seconds."
+        },
+        "aiStack.automation.fullAuto": {
+          "type": "boolean",
+          "default": false,
+          "description": "When enabled, all model dangerous-permission switches are treated as enabled."
+        },
+        "aiStack.permissions.dangerous.codex": {
+          "type": "boolean",
+          "default": false,
+          "description": "Enable dangerous non-interactive permissions for Codex role."
+        },
+        "aiStack.permissions.dangerous.claude": {
+          "type": "boolean",
+          "default": false,
+          "description": "Enable dangerous non-interactive permissions for Claude role."
+        },
+        "aiStack.permissions.dangerous.gemini": {
+          "type": "boolean",
+          "default": false,
+          "description": "Enable dangerous non-interactive permissions for Gemini role."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p .",
+    "watch": "tsc -watch -p .",
+    "vscode:prepublish": "npm run compile"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.4.0"
+  }
+}

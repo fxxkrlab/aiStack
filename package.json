@@ -1,0 +1,15 @@
+{
+  "name": "aistack",
+  "version": "0.1.0",
+  "license": "GPL-3.0-or-later",
+  "private": true,
+  "description": "AIStack orchestration core (Node/TypeScript)",
+  "scripts": {
+    "build": "tsc -p .",
+    "watch": "tsc -w -p ."
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "typescript": "^5.4.0"
+  }
+}
